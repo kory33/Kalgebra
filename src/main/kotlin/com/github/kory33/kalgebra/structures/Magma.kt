@@ -10,14 +10,14 @@ abstract class Magma<E, M: Magma<E, M>>(val value: E) {
     /**
      * an operation associated with this magma
      */
-    protected abstract val operation: MagmaOperation<E>
+    abstract val operation: MagmaOperation<E>
 
     /**
      * A function that 'lifts' a given value to a magma.
      *
      * The returned magma object must have [Magma.value] equal to the given [value].
      */
-    protected abstract fun lift(value: E): M
+    abstract fun lift(value: E): M
 
     /**
      * compose another magma using the associated operation
