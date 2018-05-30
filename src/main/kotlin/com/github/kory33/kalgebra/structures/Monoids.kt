@@ -12,7 +12,8 @@ abstract class Monoid<E, M: Monoid<E, M>>(value: E, override val operation: Mono
 /**
  * Class of group structures.
  */
-abstract class Group<E, G: Group<E, G>>(value: E, operation: GroupOperation<E>): Monoid<E, G>(value, operation) {
+abstract class Group<E, G: Group<E, G>>(value: E, override val operation: GroupOperation<E>)
+    : Monoid<E, G>(value, operation) {
 
     /**
      * Inverse of this object.
