@@ -7,13 +7,19 @@ import com.github.kory33.kalgebra.operations.MonoidOperation
 /**
  * Class of monoid structures.
  */
-abstract class Monoid<E, M: Monoid<E, M>>(value: E, override val operation: MonoidOperation<E>): Magma<E, M>(value)
+abstract class Monoid<E, M: Monoid<E, M>>(value: E): Magma<E, M>(value) {
+
+    abstract override val operation: MonoidOperation<E>
+
+}
 
 /**
  * Class of group structures.
  */
-abstract class Group<E, G: Group<E, G>>(value: E, override val operation: GroupOperation<E>)
-    : Monoid<E, G>(value, operation) {
+abstract class Group<E, G: Group<E, G>>(value: E)
+    : Monoid<E, G>(value) {
+
+    abstract override val operation: GroupOperation<E>
 
     /**
      * Inverse of this object.
@@ -30,5 +36,8 @@ abstract class Group<E, G: Group<E, G>>(value: E, override val operation: GroupO
 /**
  * Class of abelian(commutative) group structures.
  */
-abstract class AbelianGroup<E, G: AbelianGroup<E, G>>(value: E, operation: CommutativeGroupOperation<E>)
-    : Group<E, G>(value, operation)
+abstract class AbelianGroup<E, G: AbelianGroup<E, G>>(value: E) : Group<E, G>(value) {
+
+    abstract override val operation: CommutativeGroupOperation<E>
+
+}
