@@ -1,4 +1,4 @@
-package com.github.kory33.kalgebra
+package com.github.kory33.kalgebra.operations
 
 /**
  * Interface for operations which take two values of type [M] and return a value of type [M].

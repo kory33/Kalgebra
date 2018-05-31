@@ -1,6 +1,6 @@
 package com.github.kory33.kalgebra.structures.instances.group
 
-import com.github.kory33.kalgebra.GroupOperation
+import com.github.kory33.kalgebra.operations.GroupOperation
 import com.github.kory33.kalgebra.structures.Group
 
 private class ZippedGroupOperations<A, B>(private val op1: GroupOperation<A>, private val op2: GroupOperation<B>)

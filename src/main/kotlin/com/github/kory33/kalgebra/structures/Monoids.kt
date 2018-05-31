@@ -1,8 +1,8 @@
 package com.github.kory33.kalgebra.structures
 
-import com.github.kory33.kalgebra.CommutativeGroupOperation
-import com.github.kory33.kalgebra.GroupOperation
-import com.github.kory33.kalgebra.MonoidOperation
+import com.github.kory33.kalgebra.operations.CommutativeGroupOperation
+import com.github.kory33.kalgebra.operations.GroupOperation
+import com.github.kory33.kalgebra.operations.MonoidOperation
 
 /**
  * Class of monoid structures.

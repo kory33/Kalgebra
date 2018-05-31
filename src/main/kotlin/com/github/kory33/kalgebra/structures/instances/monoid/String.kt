@@ -1,6 +1,6 @@
 package com.github.kory33.kalgebra.structures.instances.monoid
 
-import com.github.kory33.kalgebra.MonoidOperation
+import com.github.kory33.kalgebra.operations.MonoidOperation
 import com.github.kory33.kalgebra.structures.Monoid
 
 class StringMonoid(value: String): Monoid<String, StringMonoid>(value, StringMonoid) {

@@ -1,6 +1,6 @@
 package com.github.kory33.kalgebra.structures
 
-import com.github.kory33.kalgebra.MagmaOperation
+import com.github.kory33.kalgebra.operations.MagmaOperation
 
 /**
  * Class of magma structures.
