@@ -17,7 +17,7 @@ abstract class Magma<E, M: Magma<E, M>>(val value: E) {
      *
      * The returned magma object must have [Magma.value] equal to the given [value].
      */
-    abstract fun lift(value: E): M
+    protected abstract fun lift(value: E): M
 
     /**
      * compose another magma using the associated operation
