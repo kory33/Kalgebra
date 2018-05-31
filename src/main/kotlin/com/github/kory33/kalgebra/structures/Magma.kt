@@ -5,7 +5,7 @@ import com.github.kory33.kalgebra.operations.MagmaOperation
 /**
  * Class of magma structures.
  */
-abstract class Magma<E, M: Magma<E, M>>(val value: E) {
+abstract class Magma<E, M: Magma<E, M>>(val value: E): Composable<M, M> {
 
     /**
      * an operation associated with this magma
@@ -22,7 +22,7 @@ abstract class Magma<E, M: Magma<E, M>>(val value: E) {
     /**
      * compose another magma using the associated operation
      */
-    infix fun compose(another: Magma<E, M>): M = lift(operation(value, another.value))
+    override fun compose(another: M): M = lift(operation(value, another.value))
 
     override fun toString() = "${javaClass.name}[value = $value]"
 

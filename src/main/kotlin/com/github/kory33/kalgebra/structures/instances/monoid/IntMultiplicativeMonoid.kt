@@ -2,8 +2,10 @@ package com.github.kory33.kalgebra.structures.instances.monoid
 
 import com.github.kory33.kalgebra.operations.MonoidOperation
 import com.github.kory33.kalgebra.structures.Monoid
+import com.github.kory33.kalgebra.structures.Multiplicative
 
-class IntMultiplicativeMonoid(value: Int): Monoid<Int, IntMultiplicativeMonoid>(value) {
+class IntMultiplicativeMonoid(value: Int)
+    : Monoid<Int, IntMultiplicativeMonoid>(value), Multiplicative<IntMultiplicativeMonoid, IntMultiplicativeMonoid> {
 
     override val operation: MonoidOperation<Int> = IntMultiplicativeMonoid
     override fun lift(value: Int): IntMultiplicativeMonoid = IntMultiplicativeMonoid(value)
