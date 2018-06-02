@@ -5,7 +5,7 @@ import com.github.kory33.kalgebra.operations.MagmaOperation
 /**
  * Class of magma structures.
  */
-abstract class Magma<E, M: Magma<E, M>>(val value: E): Composable<M, M> {
+abstract class Magma<E, M: Magma<E, M>>(val value: E): Composable<M> {
 
     /**
      * an operation associated with this magma
