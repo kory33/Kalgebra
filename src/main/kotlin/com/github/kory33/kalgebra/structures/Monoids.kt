@@ -1,6 +1,6 @@
 package com.github.kory33.kalgebra.structures
 
-import com.github.kory33.kalgebra.operations.CommutativeGroupOperation
+import com.github.kory33.kalgebra.operations.AbelianGroupOperation
 import com.github.kory33.kalgebra.operations.GroupOperation
 import com.github.kory33.kalgebra.operations.MonoidOperation
 
@@ -38,6 +38,6 @@ abstract class Group<E, G: Group<E, G>>(value: E)
  */
 abstract class AbelianGroup<E, G: AbelianGroup<E, G>>(value: E) : Group<E, G>(value) {
 
-    abstract override val operation: CommutativeGroupOperation<E>
+    abstract override val operation: AbelianGroupOperation<E>
 
 }

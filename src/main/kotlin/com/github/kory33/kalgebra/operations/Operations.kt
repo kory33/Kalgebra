@@ -71,7 +71,7 @@ interface GroupOperation<M>: MonoidOperation<M> {
 /**
  * Interface for commutative group operations.
  */
-interface CommutativeGroupOperation<M>: GroupOperation<M>, CommutativeMonoidOperation<M>
+interface AbelianGroupOperation<M>: GroupOperation<M>, CommutativeMonoidOperation<M>
 
 /**
  * Interface for operations on additive group of [M].
@@ -79,7 +79,7 @@ interface CommutativeGroupOperation<M>: GroupOperation<M>, CommutativeMonoidOper
  * [plus] extension function should be consistent with [invoke].
  * By default, [invoke] uses outcome of [plus] and there is no need to override it.
  */
-interface AdditiveGroupOperation<M>: CommutativeGroupOperation<M> {
+interface AdditiveGroupOperation<M>: AbelianGroupOperation<M> {
 
     operator fun M.plus(another: M): M
 
@@ -93,7 +93,7 @@ interface AdditiveGroupOperation<M>: CommutativeGroupOperation<M> {
  * [times] extension function should be consistent with [invoke].
  * By default, [invoke] uses outcome of [times] and there is no need to override it.
  */
-interface MultiplicativeGroupOperation<M>: CommutativeGroupOperation<M> {
+interface MultiplicativeGroupOperation<M>: AbelianGroupOperation<M> {
 
     operator fun M.times(another: M): M
 
