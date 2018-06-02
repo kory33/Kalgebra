@@ -73,30 +73,3 @@ interface GroupOperation<M>: MonoidOperation<M> {
  */
 interface AbelianGroupOperation<M>: GroupOperation<M>, CommutativeMonoidOperation<M>
 
-/**
- * Interface for operations on additive group of [M].
- *
- * [plus] extension function should be consistent with [invoke].
- * By default, [invoke] uses outcome of [plus] and there is no need to override it.
- */
-interface AdditiveGroupOperation<M>: AbelianGroupOperation<M> {
-
-    operator fun M.plus(another: M): M
-
-    override fun invoke(p1: M, p2: M): M = p1 + p2
-
-}
-
-/**
- * Interface for operations on multiplicative group of [M].
- *
- * [times] extension function should be consistent with [invoke].
- * By default, [invoke] uses outcome of [times] and there is no need to override it.
- */
-interface MultiplicativeGroupOperation<M>: AbelianGroupOperation<M> {
-
-    operator fun M.times(another: M): M
-
-    override fun invoke(p1: M, p2: M): M = p1 * p2
-
-}
